@@ -1,0 +1,17 @@
+<h1 class="text-center mt-4">Categorías</h1>
+
+<div class="row justify-content-center">
+
+    {{#each categories}}
+
+    <div class="card text-center my-4 w-75">
+        <div class="card-header">
+            <h4><a class="enlace-categoria" href="/categories/{{title}}">{{title}}</a></h4>
+        </div>
+    </div>
+
+    {{else}}
+    <p>No hay categorías</p>
+    {{/each}}
+
+</div>

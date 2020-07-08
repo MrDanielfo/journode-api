@@ -1,0 +1,14 @@
+{{> _errors}}
+
+<div class="card card-body">
+    <h3>Agregar Categoría</h3>
+    <form action="/categories" method="POST">
+        <!-- después se le agregará el enctype -->
+        <div class="form-group">
+            <label for="title">Título</label>
+            <input type="text" class="form-control" name="title" id="title">
+        </div>
+
+        <button type="submit" class="btn btn-success btn-block mt-3">Agregar</button>
+    </form>
+</div>

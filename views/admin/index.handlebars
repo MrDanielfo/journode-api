@@ -1,0 +1,31 @@
+<h1 class="text-center mt-4">Administrador de Noticias</h1>
+
+<div class="row mt-4">
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Título</th>
+                <th scope="col">Categoría</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each news}}
+                <tr>
+                    <td>{{title}}</td>
+                    <td>{{category.title}}</td>
+                    <td><a class="btn btn-warning" href="/admin/news-edit/{{_id}}" role="button">Editar</a></td>
+                    <td><a class="btn btn-danger btn-Eliminar" href="/admin/news-delete/{{_id}}/{{image}}" role="button">Eliminar</a></td>
+                </tr>
+            {{else}}
+                <p>No hay noticias para administrar</p>
+            {{/each}}  
+        </tbody>
+    </table>
+    
+    
+    
+
+</div>

@@ -1,0 +1,44 @@
+.bg-success,
+.badge-success,
+.btn-primary,
+.btn-success {
+    background-color: tomato!important; 
+}
+
+.image-news,
+.edit-img {
+    height: 200px;
+}
+
+.image-single {
+    height: 450px;
+}
+
+.btn-primary,
+.btn-success {
+    outline: none!important;
+    border: none;
+}
+
+.categoria-grande,
+.fecha-grande {
+    display: block;
+    height: 2em;
+    padding: .5em;
+    font-size: 1em;
+    width: 6.5em;
+}
+
+.fecha-grande.adicional {
+    width: 10em;
+}
+
+.enlace-categoria {
+    text-decoration: none;
+    color: black; 
+}
+
+.enlace-categoria:hover {
+    color: tomato;
+    text-decoration: none;
+}

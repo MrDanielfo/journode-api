@@ -1,0 +1,23 @@
+<h1 class="text-center mt-4">{{titulo}}</h1>
+
+<div class="row justify-content-center my-3">
+
+    {{#each news}}
+
+    <div class="card my-2 mx-4" style="width: 18rem;">
+        <img class="card-img-top image-news img-fluid" src="/img/{{image}}" alt="Card image cap">
+        <div class="card-body">
+            <h6 class="text-left">
+                <span class="badge badge-pill badge-success">{{formatDate date 'MMMM Do YYYY'}}</span>
+            </h6>
+            <h5 class="card-title">{{title}}</h5>
+            <p class="card-text">{{stripTags (truncate body 100)}}</p>
+            <a href="/news/single/{{_id}}" class="btn btn-primary">Leer más</a>
+        </div>
+    </div>
+
+    {{else}}
+    <p>Aún hay noticias en esta categoría</p>
+    {{/each}}
+
+</div>

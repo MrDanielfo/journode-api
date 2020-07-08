@@ -1,0 +1,41 @@
+<div class="card mb-5 mt-5">
+    <img class="card-img-top image-single img-fluid" src="/img/{{news.image}}" alt="Card image cap">
+    <div class="card-body">
+        <span class="badge badge-pill badge-dark fecha-grande adicional">{{formatDate news.date 'MMMM Do YYYY'}}</span>
+        <a href="/categories/{{news.category.title}}" class="badge badge-success my-3 categoria-grande">{{news.category.title}}</a>
+        <h2 class="card-title">{{news.title}}</h2>
+        <p class="card-text">{{{news.body}}}</p>
+    </div>
+</div>
+
+<!-- formulario para comentarios --> 
+{{#if news.allowComments}}
+        <h3 class="text-center my-3">Comentarios</h3>
+    {{#if user}}
+        <h3 class="text-center my-3">Deja un comentario</h3>
+        <form method="POST" class="my-4" action="/news/comment/{{news.id}}">
+            <div class="form-group">
+                <label for="comentario">Escribe el comentario</label>
+                <textarea class="form-control" name="comentario" id="comentario" rows="5"></textarea>
+            </div>
+            <button type="submit" class="mb-4 btn btn-primary btn-block">Agregar</button>
+        </form>
+    {{else}}
+        <h3 class="text-center my-4">Para comentar, primero debes iniciar sesión</h3>
+    {{/if}}
+
+    <div class="row justify-content-center">
+            
+        {{#each news.comments}}
+            <div class="card border-dark my-3" style="width: 60rem; max-width: 100%;">
+                <div class="card-header">{{formatDate commentDate 'MMMM Do YYYY'}}</div>
+                <div class="card-body text-dark">
+                    <h4 class="card-title">{{commentUser.name}} {{commentUser.lastName}}</h4>
+                    <p class="card-text">{{commentBody}}</p>
+                </div>
+            </div>
+        {{/each}}
+
+    </div>
+
+{{/if}}

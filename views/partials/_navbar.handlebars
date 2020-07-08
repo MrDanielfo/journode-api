@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-success mb-3">
+    <div class="container">
+        <a class="navbar-brand" href="/">JourNode</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            {{#if user}}
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="/admin">Admin</a>
+            </div>
+            {{else}}
+
+            {{/if}}
+            <div class="navbar-nav ml-auto">
+                
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbarDropdownMenuLink">News to the World</a>
+                    <div class="dropdown-menu">
+                        {{#if user}}
+                        <a href="/news/add" class="dropdown-item">Agrega una noticia</a>
+                        <a href="/categories/add-category" class="dropdown-item">Agrega una categoría</a>
+                        {{else}}
+                        <a href="/news" class="dropdown-item">News</a>
+                        <a href="/categories" class="dropdown-item">Categorías</a>
+                        {{/if}}
+                    </div>
+                </li>
+                
+                {{#if user}}
+                <li class="nav-item">
+                    <a href="/users/logout" class="nav-link">Logout</a>
+                </li>
+                {{else}}
+                <li class="nav-item">
+                    <a href="/users/login" class="nav-link">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/users/register" class="nav-link">Register</a>
+                </li>
+                {{/if}}
+                
+            </div>
+        </div>
+    </div>
+</nav>
